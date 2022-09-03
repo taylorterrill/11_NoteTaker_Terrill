@@ -20,11 +20,14 @@ module.exports = function (app) {
     app.post("/api/notes", (request, response) => {
         console.log("\n\nExecuting POST notes request");
 
+        const newNote = request.body;
+        newNote.id = uuidv4();
+
         let data = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
 
         console.log("Writing new note to db")
         
-        data.push(request.body);
+        data.push(newNote);
 
         fs.writeFile(
             './db/db.json',

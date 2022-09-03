@@ -10,11 +10,13 @@ if (window.location.pathname === '/notes') {
   saveNoteBtn = document.querySelector('.save-note');
   newNoteBtn = document.querySelector('.new-note');
   noteList = document.querySelectorAll('.list-container .list-group');
+  console.log("notes");
 }
 
 // Show an element
 const show = (elem) => {
   elem.style.display = 'inline';
+  console.log('show');
 };
 
 // Hide an element
